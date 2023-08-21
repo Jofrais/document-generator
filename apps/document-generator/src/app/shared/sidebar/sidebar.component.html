@@ -1,0 +1,58 @@
+<aside
+  [class.translate-x-0]="isMobile && isSidebarOpen"
+  class="w-60 bg-slate-800 text-gray-100 h-full flex flex-col transition-transform  -translate-x-full sm:translate-x-0 fixed top-0 left-0 z-40"
+>
+  <h2 class="p-2 font-montserrat text-2xl font-bold">GD France</h2>
+  <div class="flex flex-col h-full font-open-sans justify-between">
+
+    <!-- Liste des liens -->
+    <div class="flex flex-col p-2 mt-4 text-center">
+
+      <div class="p-2 hover:bg-slate-500 rounded cursor-pointer transition-all duration-300">
+        <fa-icon [icon]="faFile" class="w-6 h-6"></fa-icon>
+        <a
+          routerLink="/"
+          routerLinkActive="font-semibold"
+          class="ml-2"
+        >Générer un document</a>
+      </div>
+
+    </div>
+
+    <div class="p-4 mx-auto">
+      <button
+        class="p-2 bg-amber-300 text-slate-800 rounded cursor-pointer transition-all duration-300 hover:bg-amber-100">
+        <fa-icon [icon]="faSignInAlt" class="w-6 h-6"></fa-icon>
+        <span class="ml-2 font-semibold">Se connecter</span>
+      </button>
+    </div>
+
+  </div>
+</aside>
+
+<button
+  *ngIf="isMobile && !isSidebarOpen"
+  (click)="toggleSidebar()"
+  class="absolute top-4 left-4 z-50"
+>
+  <svg
+    xmlns="http://www.w3.org/2000/svg"
+    class="h-6 w-6 text-black"
+    fill="none"
+    viewBox="0 0 24 24"
+    stroke="currentColor"
+  >
+    <path
+      stroke-linecap="round"
+      stroke-linejoin="round"
+      stroke-width="2"
+      d="M4 6h16M4 12h16m-7 6h7"
+    />
+  </svg>
+</button>
+
+<div
+  *ngIf="isMobile && isSidebarOpen"
+  class="mobile-overlay fixed top-0 left-0 w-full h-full bg-gray-800 bg-opacity-50 z-30"
+  (click)="closeSidebar()"
+></div>

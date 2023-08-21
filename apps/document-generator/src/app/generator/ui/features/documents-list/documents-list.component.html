@@ -1,0 +1,8 @@
+<div class="grid grid-cols-3 gap-4 m-4">
+  <div class="bg-gray-50 p-4 drop-shadow flex flex-col cursor-pointer hover:drop-shadow-lg transition-all"
+       *ngFor="let doc of documents" [routerLink]="'/document/' + doc.name">
+    <h2 class="font-montserrat font-semibold text-lg">{{doc.name}}</h2>
+    <!-- skeleton document -->
+  </div>
+
+</div>

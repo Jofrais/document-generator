@@ -1,0 +1,14 @@
+{
+  "targets": {
+    "documentgenerator-8df1d": {
+      "hosting": {
+        "document-generator": [
+          "documentgenerator-8df1d"
+        ]
+      }
+    }
+  },
+  "projects": {
+    "default": "documentgenerator-8df1d"
+  }
+}
